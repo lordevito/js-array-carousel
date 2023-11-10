@@ -2,7 +2,7 @@
 
 
     //<div class="item active">
-        <img src="./img/01.jpg" alt="" />
+       // <img src="./img/01.jpg" alt="" />
     //</div>
 
 
@@ -50,7 +50,18 @@ const domItems = document.querySelectorAll(`.item`);
 
 prev.addEventListener(`click`, function() {
 
+    if (currentItem > 0) {
+        domItems[currentItem].classList.remove(`active`);
+        currentItem--;
+        domItems[currentItem].classList.add (`active`);
+    }
+});
+
+next.addEventListener(`click`, function() {
+
     if (currentItem < domItems.length - 1) {
+        domItems[currentItem].classList.remove(`active`);
         currentItem++;
+        domItems[currentItem].classList.add (`active`);
     }
 });
