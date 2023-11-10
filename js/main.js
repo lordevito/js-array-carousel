@@ -55,6 +55,12 @@ prev.addEventListener(`click`, function() {
         currentItem--;
         domItems[currentItem].classList.add (`active`);
     }
+    if (currentItem === 0){
+        domItems[currentItem].classList.remove(`active`);
+        currentItem = 4;
+        domItems[currentItem].classList.add (`active`);  
+    }
+
 });
 
 next.addEventListener(`click`, function() {
@@ -62,6 +68,11 @@ next.addEventListener(`click`, function() {
     if (currentItem < domItems.length - 1) {
         domItems[currentItem].classList.remove(`active`);
         currentItem++;
+        domItems[currentItem].classList.add (`active`);
+    }
+    if (currentItem === 4){
+        domItems[currentItem].classList.remove(`active`);
+        currentItem = 0;
         domItems[currentItem].classList.add (`active`);
     }
 });
